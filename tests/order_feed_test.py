@@ -6,7 +6,6 @@ from pages.order_feed_page import OrderFeedPage
 from pages.personal_account_page import PersonalAccountPage
 
 
-@allure.story("Тест 'Лента Заказов'")
 class TestsOrderFeed:
     @allure.title('Всплывающее окно после клика на ленту заказов')
     def test_window_details(self, driver):

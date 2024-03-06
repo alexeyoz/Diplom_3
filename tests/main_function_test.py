@@ -6,7 +6,6 @@ from pages.recovery_password_page import RecoveryPasswordPage
 from data import Url
 
 
-@allure.story("Проверка основного функционала")
 class TestMainFunction:
     @allure.title("Переход к Конструктору")
     def test_go_to_constructor(self, driver):

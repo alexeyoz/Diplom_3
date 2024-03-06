@@ -4,7 +4,6 @@ from pages.recovery_password_page import RecoveryPasswordPage
 from data import Url
 
 
-@allure.story('Тест "Восстановление пароля"')
 class TestRecoveryPassword:
 
     @allure.step('переход на страницу восстановления пароля по кнопке «Восстановить пароль»')

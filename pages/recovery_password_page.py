@@ -25,3 +25,6 @@ class RecoveryPasswordPage(BasePage):
     @allure.step("Получить класс подсвечиваемого поля")
     def get_class_highlighted_field(self):
         return self.get_attribute(RecoveryPasswordLocators.PASS_AVAILABLE, "class")
+
+    def go_to_personal_account(self):
+        self.find_element_located_click(RecoveryPasswordLocators.PASSWORD_RECOVERY_BUTTON)

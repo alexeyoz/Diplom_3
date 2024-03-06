@@ -1,6 +1,8 @@
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
+
+from locators.personal_account_locators import PersonalAccountLocators
 from locators.recovery_password_locators import RecoveryPasswordLocators
 
 
@@ -20,9 +22,6 @@ class BasePage:
     def current_url(self):
         return self.driver.current_url
 
-    def go_to_personal_account(self):
-        self.find_element_located_click(RecoveryPasswordLocators.PASSWORD_RECOVERY_BUTTON)
-
     def find_element_located_input(self, locator, text, time=10):
         return WebDriverWait(self.driver, time).until(EC.element_to_be_clickable(locator)).send_keys(text)
 
@@ -41,5 +40,6 @@ class BasePage:
     def waiting_for_the_order_number(self, locator, template, time=10):
         return WebDriverWait(self.driver, time).until_not(EC.text_to_be_present_in_element(locator, template))
 
-    def wait_visibility(self, timeout, locator):
-        WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located(locator))
+    def wait_visibility(self, time=10):
+        WebDriverWait(self.driver, time).until(EC.visibility_of_element_located
+                                               (PersonalAccountLocators.ENTER_TO_ACCOUNT))

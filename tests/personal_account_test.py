@@ -5,7 +5,6 @@ from data import Url
 from locators.personal_account_locators import PersonalAccountLocators
 
 
-@allure.story('Тест "Личный кабинет"')
 class TestPersonalAccount:
 
     @allure.step('тест клик "Личный кабинет"')
@@ -33,7 +32,7 @@ class TestPersonalAccount:
         personal_account_page.login_to_account(user)
         personal_account_page.click_personal_account()
         personal_account_page.logout_account()
-        personal_account_page.wait_visibility(10, PersonalAccountLocators.ENTER_TO_ACCOUNT)
+        personal_account_page.wait_visibility()
         assert personal_account_page.current_url() == Url.LOGIN_URL
 
 
